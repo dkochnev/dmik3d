@@ -1,0 +1,71 @@
+body {
+background-image: url(../img/bg.png) ;
+background-repeat: repeat;
+}
+
+.header {
+     top: 0px;
+     background-color: #24f6bd;
+    width:100%;
+    vertical-align: center;
+    text-align: left, center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    height:35px;
+    font-size: 15pt;
+    display: block;  
+}
+
+h2{
+	margin-top: 30px;
+	 font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 1.6em;
+    color: #596f6c;
+}
+
+h3{
+	 font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 1.6em;
+}
+
+h1{
+	 font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 1.6em;
+}
+
+.bottext{
+	bottom: 0px;
+	width:100%;
+	background-color: #24f6bd;
+	   color:#141414;
+	    font-family: 'Ubuntu', sans-serif;
+	    font-size: 12pt;
+	    font-weight: 300;
+}
+
+.header .webd { float:right }
+.header .madl { float:left }
+
+label{
+	background-color: #24f6bd;
+}
+
+.btn{
+	background-color: #24f6bd;
+}
+
+.buttext{
+	color: #ee008c;
+	    font-family: 'Ubuntu', sans-serif;
+font-size: 1.5em;
+}
+
+.labeltext{
+	color: #2d2d2d;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.4em;
+	font-weight: 300;
+}
