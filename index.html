@@ -1,780 +1,413 @@
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>dmik</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-<link href="img/favicon.png" rel="shortcut icon" type="image/x-icon">
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}</style>
+<link href="css/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style>
+<style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style>
+<style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}.gm-style img{max-width:none}</style>
+	
 
-<style>
+	<meta charset="utf-8">
+	
+	<title>dmik web projects</title>
+	
 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-#scrload {
-    background-color: #161616;
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("img/loading.gif");
-    background-repeat: no-repeat;
-    background-position: center;
-}
+	<meta name="robots" content="index, follow">
+	<meta name="keywords" content="web, design, development, responsive">
+	<meta name="description" content="dmik web designer graphic designer web developer 3D artist">
 
+	<meta property="og:type" content="article">
 
-body {
-background-image: url(img/bg2.png);
-}
-
-.preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-}
+	<link rel="stylesheet" href="css/main.css">
 
 
-@media (orientation: landscape){
-.monster {
-	z-index: 101;
-  position: absolute;
-  left: 50%;
-  top: 37%;
-  display: none;
-  height: 200pt;
-  width: 200pt;
-  margin-left: 20pt;
-  animation: alpha 1.15s 1 linear forwards 1s, gamma 2.1275s infinite linear forwards 2.1275s;
-  -moz-transform: scale(1.25, 1.25) translate(-50%, -45%);
-  -ms-transform: scale(1.25, 1.25) translate(-50%, -45%);
-  -webkit-transform: scale(1.25, 1.25) translate(-50%, -45%);
-  transform: scale(1.25, 1.25) translate(-50%, -45%);
-  background-color: #191919;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.45) 25%, rgba(0, 0, 0, 0) 30%), linear-gradient(to top, #191919, #191919 50%, #006677 50%, #00dcc2 100%);
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9ImNpcmNsZSIgY3k9IiIgcj0iMzAlIj48c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjQ1Ii8+PHN0b3Agb2Zmc2V0PSIzMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjEuMCIgeDI9IjAuNSIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiMwMDc3NjYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMGRjYzIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPg==');
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.45) 25%, rgba(0, 0, 0, 0) 30%), -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #191919), color-stop(50%, #191919), color-stop(50%, #006677), color-stop(100%, #00dcc2));
-  background: -moz-radial-gradient(circle, rgba(255, 255, 255, 0.45) 25%, rgba(0, 0, 0, 0) 30%), -moz-linear-gradient(bottom, #191919, #191919 50%, #006677 50%, #00dcc2 100%);
-  background: -webkit-radial-gradient(circle, rgba(255, 255, 255, 0.45) 25%, rgba(0, 0, 0, 0) 30%), -webkit-linear-gradient(bottom, #191919, #191919 50%, #006677 50%, #00dcc2 100%);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.45) 25%, rgba(0, 0, 0, 0) 30%), linear-gradient(to top, #191919, #191919 50%, #006677 50%, #00dcc2 100%);
-  background-size: 100% 300%, 100% 200%;
-  background-position: 100% 100%, 100% 100%;
-  -moz-transition: background 0.15s ease-in-out;
-  -o-transition: background 0.15s ease-in-out;
-  -webkit-transition: background 0.15s ease-in-out;
-  transition: background 0.15s ease-in-out;
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-   -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
-    animation-iteration-count: 3;
-}
-}
-
-@media (orientation: portrait){
-.monster {
-	z-index: 101;
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  display: inline-block;
-  height: 200pt;
-  width: 200pt;
-  margin-left: 20pt;
-  animation: alpha 1.15s 1 linear forwards 1s, gamma 2.1275s infinite linear forwards 2.1275s;
-  -moz-transform: scale(1.25, 1.25) translate(-50%, -45%);
-  -ms-transform: scale(1.25, 1.25) translate(-50%, -45%);
-  -webkit-transform: scale(1.25, 1.25) translate(-50%, -45%);
-  transform: scale(1.25, 1.25) translate(-50%, -45%);
-  background-color: #191919;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.45) 25%, rgba(0, 0, 0, 0) 30%), linear-gradient(to top, #191919, #191919 50%, #006677 50%, #00dcc2 100%);
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9ImNpcmNsZSIgY3k9IiIgcj0iMzAlIj48c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjQ1Ii8+PHN0b3Agb2Zmc2V0PSIzMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjEuMCIgeDI9IjAuNSIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiMwMDc3NjYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMGRjYzIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPg==');
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.45) 25%, rgba(0, 0, 0, 0) 30%), -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #191919), color-stop(50%, #191919), color-stop(50%, #006677), color-stop(100%, #00dcc2));
-  background: -moz-radial-gradient(circle, rgba(255, 255, 255, 0.45) 25%, rgba(0, 0, 0, 0) 30%), -moz-linear-gradient(bottom, #191919, #191919 50%, #006677 50%, #00dcc2 100%);
-  background: -webkit-radial-gradient(circle, rgba(255, 255, 255, 0.45) 25%, rgba(0, 0, 0, 0) 30%), -webkit-linear-gradient(bottom, #191919, #191919 50%, #006677 50%, #00dcc2 100%);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.45) 25%, rgba(0, 0, 0, 0) 30%), linear-gradient(to top, #191919, #191919 50%, #006677 50%, #00dcc2 100%);
-  background-size: 100% 300%, 100% 200%;
-  background-position: 100% 100%, 100% 100%;
-  -moz-transition: background 0.15s ease-in-out;
-  -o-transition: background 0.15s ease-in-out;
-  -webkit-transition: background 0.15s ease-in-out;
-  transition: background 0.15s ease-in-out;
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-   -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
-    animation-iteration-count: 3;
-}
-}
-
-
-@keyframes alpha {
-  0% {
-    margin-top: 0em;
-    background-position: 100% 100%, 100% 100%;
-  }
-  70% {
-    background-position: 100% 100%, 100% 85%;
-  }
-  75% {
-    -webkit-filter: blur(0);
-    filter: blur(0);
-  }
-  80% {
-    margin-top: 0em;
-  }
-  85% {
-    margin-top: 0em;
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-  }
-  100% {
-    background-position: 100% 0, 100% 0%;
-    margin-top: 0em;
-    -webkit-filter: blur(0);
-    filter: blur(0);
-  }
-}
-@keyframes gamma {
-  0% {
-    background-position: 100% 100%, 100% 0;
-  }
-  90% {
-    opacity: .15;
-    background-position: 100% 100%, 100% 0;
-    -webkit-filter: blur(0);
-    filter: blur(0);
-  }
-  95% {
-    opacity: 1;
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-  }
-  100% {
-    background-position: 100% 0, 100% 0;
-    -webkit-filter: blur(0);
-    filter: blur(0);
-  }
-}
-</style>
-
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
-<script type="text/javascript" src="js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="js/jquery.fullPage.js"></script>
-<script src="js/jquery.swipebox.js"></script>
-<link rel="stylesheet" href="css/swipebox.css">
-
-<link href='css/style.css' rel='stylesheet' type='text/css'>
-<link href='css/jquery.fullPage.css' rel='stylesheet' type='text/css'>
-
-
-
-		<script type="text/javascript">
-			$(document).ready(function() {
-			    $('#fullpage').fullpage({
-			        //Navigation
-			        menu: '#menu',
-			        lockAnchors: false,
-			        anchors:['intro', 'about', 'mainMenu', 'webDesign', 'graphicDesign', 'illustration'],
-			        navigation: false,
-			        navigationPosition: 'right',
-			        navigationTooltips: ['firstSlide', 'secondSlide', 'thirdSlide', 'fourthSlide'],
-			        showActiveTooltip: false,
-			        slidesNavigation: false,
-			        slidesNavPosition: 'bottom',
-
-			        //Scrolling
-			        css3: true,
-			        scrollingSpeed: 500,
-			        autoScrolling: true,
-			        fitToSection: true,
-			        fitToSectionDelay: 1000,
-			        scrollBar: false,
-			        easing: 'easeInOutCubic',
-			        easingcss3: 'ease',
-			        loopBottom: false,
-			        loopTop: false,
-			        loopHorizontal: true,
-			        continuousVertical: false,
-			       normalScrollElements: '#castleFight, #booklet, #digitalMag, #gameBar, #rusCard, #childBook, #brainidiom, #spaceship, #stillife, #classroom, #animvideos, #illospencil, #miscetudes',
-			        scrollOverflow: true,
-			        touchSensitivity: 1,
-			        normalScrollElementTouchThreshold: 5,
-
-			        //Accessibility
-			        keyboardScrolling: true,
-			        animateAnchor: true,
-			        recordHistory: true,
-
-			        //Design
-			        controlArrows: true,
-			        verticalCentered: true,
-			        resize : false,
-			        sectionsColor : ['#191919', '#fff' , 'red', 'blue'],
-			        paddingTop: '0em',
-			        paddingBottom: '0px',
-			        fixedElements: '#header, .footer',
-			        responsiveWidth: 0,
-			        responsiveHeight: 0,
-
-			        //Custom selectors
-			        sectionSelector: '.section',
-			        slideSelector: '.slide',
-
-			        //events
-			        onLeave: function(index, nextIndex, direction){
-             
-
-              },
-			        afterLoad: function(anchorLink, index){
-                    
-              },
-			        afterRender: function(){},
-			        afterResize: function(){},
-			        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-			        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-			    });
-			});
-
-
-	</script>
-
-
-
-<script>
-
-$(window).load(function() {
-     $('#scrload').fadeOut('slow', function(){
-      $('.monster').css('display', 'inline-block');
-      $('.logotext').css('display', 'block');  
-      $('.metext').css('display', 'block');
-     
-      $('.arrow').css('display', 'block');
-      $(".splatter12, .splatter13, .splatter14, .splatter15").css('display', 'block');
-    $(".frfade1, .splatter15, .splatter13").hide(0).delay(2200).fadeIn(5000)
-    $(".frfade2, .splatter12").hide(0).delay(4100).fadeIn(5000)
-    $(".frfade3, .splatter14, .arrow").hide(0).delay(6400).fadeIn(5000)
-    })
-      
-
-});
-
-
-</script>
-
-
+	<link href="img/favicon.png" rel="shortcut icon" type="image/x-icon">
 
 
 
 </head>
-
-
-
-
-
 <body>
+	<header class="header sticky">
+		<div class="wrap">
+			<div class="top-line">
+				<div class="logo">
+					<a href="index.html"><img id="logoimg" src="img/logo2.png" alt="logo"></a>
+				</div>
+				<section class="section">
+					<h2 class="curr" rel="steps">Workflow</h2>
+					<h2 class="" rel="portfolio">Portfolio</h2>
+					<h2 class="" rel="knowledge">Knowledge</h2>
+					<h2 class="" rel="contacts">Contact me</h2>
+				</section>
+				<section class="extra">
+					<div class="curr" rel="steps">
+						<div class="slider-ctrl">
+							<ul>
+								<li><a data-slide-index="0" class="active" href="#">Planning</a><span>–</span></li>
+								<li><a class="" data-slide-index="1" href="#">Development</a><span></span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="" rel="portfolio">
+						<div class="filter-ctrl b-portfolio-filter">
+							<ul>
+								<li><a href="#" rel="" class="active">All</a></li>
+					
+								<li><a href="#" rel=".b">Mobile Apps</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="" rel="knowledge">Knowledge</div>
+					<div class="" rel="contacts">
+						<div class="contacts">
+							<ul>
+								<li><a href="http://dmik3d.com">www.dmik3d.com</a></li>
+								<li><a href="mailto:dmik17@gmail.com">dmik17@gmail.com</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
 
+				<div class="btn">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+			</div>
 
-<div id="scrload"></div>
+			<section class="menu">
+				<nav class="nav">
+					<ul>
+						<li class=""><a href="#about">About</a></li>
+						<li class="curr"><a href="#steps">Workflow</a></li>
+						<li class=""><a href="#portfolio">Portfolio</a></li>
+						<li class=""><a href="#knowledge">Knowledge</a></li>
+						<li class=""><a href="#contacts">Contact me</a></li>
+					</ul>
+				</nav>
 
+				
 
-<div id="fullpage">
- 
-	<div class="section" id="firstintro">
-      	 <div class="intro">
-      			<div class="monster">
-      		
-      					<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-      					<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-      					   viewBox="0 0 248 248" enable-background="new 0 0 248 248" xml:space="preserve">
-      					<g>
-      					  <path fill="#191919" d="M0,0v250h250V0H0z M169,198h-22v-59h-14v32h-22v-32H97v1v57H6l0.1-81H75l0.1-67.9L97,48v68h72V198z M169,106h-22V84h22V106
-      					    z M238,198l-41-37v37h-22l0.1-148.9L197,49v69h40v22h-30l31,29V198z"/>
-      					  <rect fill="#191919" x="28" y="139" width="47" height="36"/>
-      					</g>
-      					</svg>
-      			</div>
+				<div class="bottom">
+					<div class="copyright">&copy; Copyright 2016 dmik</div>
+					<a class="tel" href="mailto:dmik17@gmail.com">dmik17@gmail.com</a>
+					<a class="top" href="#about">Up</a>
+				</div>
+			</section>
+		</div>
+	</header>
 
-      			<div class="logotext">
-      				<div class="frweb frfade1">web design / </div>
-      	            <div class="frgrdes frfade2"> graphic design / </div>
-      	            <div class="frthird frfade3"> 3D modeling</div> 
-      			</div>
-
-      		</div>
-
-      				<div class="arrow">
-      		    <span>about ↓</span>
-      				</div> 
-
-
-      				<div class="splatter12"></div>
-      				<div class="splatter13"></div>
-      				<div class="splatter14"></div>
-      				<div class="splatter15"></div>
-
-
-	</div>
-
-	<div class="section" >
-      		<div class="intro1">
-  
-      		    <div class="mephoto"> <span class="helper"></span><img src="img/n3.gif"/></div> 
-</div>
-             
-              <div class="metext"><p> &nbsp; &nbsp; &nbsp;  &nbsp; Hello! My name is Dmitry Kochnev, and I am a student of City College of New York pursuing a BFA degree in Electronic Design and Multimedia program. I am currently based in New York City. My passion is web design and graphic design. I started to learn web desing 12 years ago. As for graphic design, I work with both 2D and 3D graphics. Having interest in web design and CG for many years, I have had the opportunity to work with most 2D and 3D software and learn a lot of coding tricks. I am mostly comfortable with HTML/CSS, JavaScript, Adobe Creative Suite, 3ds max and Cinema 4D. <br>
-              &nbsp; &nbsp; &nbsp;  &nbsp; My interests include linguistics, photography, numismatics, painting and kiting. I am inspired by Pixar animation films.        <br>
-              &nbsp; &nbsp; &nbsp; &nbsp; You can download my Resume <a href="dkochnev_resume_web.doc">HERE</a>
-                        
-             </p>
-      		   
-            
-            
-
-      </div>
-              <div class="arrow2">
-              <span>menu ↓</span>
-              </div> 
+	<section id="about">
+		<h3>Welcome<br>to my web projects </h3>
+		<p>This is a website that shows my web projects. This is a part of a bigger website <a href="http://dmik3d.com" target="_blank">www.dmik3d.com</a> that  covers graphic design and 3D illustration projects that I did. Feel free to visit the website. 
+			As for this part, just scroll down to read more about my aproach to web projects, see my portfolio and what I know.
+			If you feel I am the right candidate, feel free to mail me via the web form or email me at dmik17@gmail.com
+			and you may download my resume <a href="../dkochnev_resume_web.doc" target="_blank" style="color:#ff1d8e;">HERE.</a>
+			Thank you.</p>
 		
+		<footer>
+			<p class="site">&copy; 2016 dmik</p>
+			<a class="tel" href="mailto:dmik17@gmail.com">dmik17@gmail.com</a>
+		</footer>
+
+	</section>
+
+	<section id="steps">
+		<ul class="b-steps-slides slides">
+			<li class="a" data-active="true">
+				<div class="inner">
+					<h3>Planning</h3>
+					<p>Planning is the most important part. Good planning saves a lot of time. 
+						I  do sitemaps and write a summary for every projet, where I bullet point 
+						not only the most important aspects, but also the details. For me, it 
+						is better to spend more time on planning because it will be clear for me
+						 and for the client what to expect. I make basic mockups in Photoshop
+						 and draw sitemaps to deliver the feel of the future website and show its stucture.
+						  </p>
+					<a href="#" class="more">home</a>
+				</div>
+
+				<div class="img">
+					<img class="slide-a" src="img/slide-a1.png" alt="slide1">
+					<img class="slide-b" src="img/slide-a2.png" alt="slide2">
+					<img class="slide-c" src="img/slide-a3.png" alt="slide3">
+				</div>
+			</li>
+
+			<li data-active="false" class="b">
+				<div class="inner">
+					<h3>Development</h3>
+					<p>Based on the planned and discussed project, I start developing a website.
+					I buid the structure of the website and after then add animation and effects. 
+					I make all my websites mobile friendly as more and more people use their phones to 
+					browse internet. I prefer responsive design rather then developing another 
+					standardalone mobile version as it saves time and money of the client.</p>
+					<a href="#" class="more">home</a>
+				</div>
+
+				<div class="vertical-img">
+					<img class="slide-a" src="img/slide-b3.png" alt="slide4">
+					<img class="slide-b" src="img/slide-b2.png" alt="slide5">
+					<img class="slide-c" src="img/slide-b1.png" alt="slide6">
+				</div>
+			</li>
+
+			
+		</ul>
+		<div class="control prev"></div>
+		<div class="control next"></div>
+	</section>
+
+	<section id="portfolio">
+		<article class="a b" style="background-image: url('img/synant.jpg')">
+			<div class="desc">
+				<h5>SynAnt Mobile app</h5>
+				<p>Landing page and mobile app I developed with live preview and option to download for android or windows platform.
+					I used: <i>html, css, javascript, ajax, json, jquery, phonegap, photoshop </i></p>
+			</div>
+			<a class="link" href="lp/SynAnt/index.html" target="_blank"></a>
+			
+		</article>
+
+		<article class="a" style="background-image: url('img/empirepm.jpg')">
+			<div class="desc">
+				<h5>Empire PM </h5>
+				<p>A landing page for a pool company Empire Pool Management that builds and maintains pools on the East Coast. 
+					I used: <i>html, css, javascript,  jquery, photoshop </i></p>
+			</div>
+			<a class="link" href="lp/EmpirePM/index.html" target="_blank"></a>
+						
+
+		</article>
+
+		<article class="a b" style="background-image: url('img/negthburn.jpg')">
+			<div class="desc">
+				<h5>Negative Thoughts Burner</h5>
+				<p>A landing page and a standardalone mobile app that allows you to enter your egative thought and burn it on your phone, tablet or desktop. I compiled it as a mobile app so you can use it offline. 
+					I used: <i>html, css, javascript, jquery, phonegap, photoshop </i> </p>
+			</div>
+			<a class="link" href="lp/NegatThBurn/index.html" target="_blank"></a>
+			
+		</article>
+
+		<article class="a" style="background-image: url('img/hudsonb.jpg')">
+			<div class="desc">
+				<h5>Hudson Beauty</h5>
+				<p>A landing page for an annual NYC photo contest. 
+					I used: <i>html, css, javascript,  jquery, photoshop </i></p>
+			</div>
+			<a class="link" href="lp/HudsonBeauty/index.html" target="_blank"></a>
+						
+
+				</article>
+
+		<article class="a" style="background-image: url('img/cf1.jpg')">
+			<div class="desc">
+				<h5>Castle Fight</h5>
+				<p>A landing page for a tabletop game 'Castle Fight'. The website is responsible as usual. 
+					I used: <i>html, css, javascript,  jquery, photoshop </i></p>
+			</div>
+			<a class="link" href="lp/CastleFight/index.html" target="_blank"></a>
+			
+		</article>
+
+		<article class="b a" style="background-image: url('img/getweather.jpg')">
+			<div class="desc">
+				<h5>Get Weather Mobile app</h5>
+				<p>A landing page and a Mobile app that I made with ferecast.io API. It uses geolocation of the phone or browser to get the weather forecast of current temperature and temperature for the next three days. It can also bring up current humidity level. 
+				I used: <i>html, css, javascript, ajax, json, jquery, phonegap, photoshop </i></p>
+			</div>
+			<a class="link" href="lp/GetWeather/index.html" target="_blank"></a>
+			
+		</article>
+
+		<article class="a" style="background-image: url('img/yurmed.jpg')">
+			<div class="desc">
+				<h5>YurMed</h5>
+				<p>A landing page for an enterpreneur who makes medical scrubs and hats. The site is more about promoting a public group in vk.com. 
+					I used: <i>html, css, javascript,  jquery, photoshop </i></p>
+			</div>
+			<a class="link" href="lp/YurMed/index.html" target="_blank"></a>
+			
+		</article>
+
+		<article class="a" style="background-image: url('img/dmik3d.jpg')">
+			<div class="desc">
+				<h5>Personal website</h5>
+				<p>My current website that has three parts of web design, graphic design, and 3D illustration. 
+					I used: <i>html, css, javascript,  jquery, photoshop, illustrator</i></p>
+			</div>
+			<a class="link" href="http://www.dmik3d.com" target="_blank"></a>
+			
+		</article>
+
+
+		<article class="a" style="background-image: url('img/madlib.jpg')">
+			<div class="desc">
+				<h5>Mad libs</h5>
+				<p>The website has two madlibs. The two iterations make two stories. 
+					However as you enter different words each time, the stories will look different.
+					I used: <i>html, css, javascript, jquery,</i></p>
+			</div>
+			<a class="link" href="lp/MadLibs/index.html" target="_blank"></a>
+			
+		</article>
+
+		
+
+		<div class="cl"></div>
+	</section>
+
+	<section id="knowledge" class="cl">
+		<div class="desc">
+			<h3>My knowledge</h3>
+			<p>I know this software and technology professionally. I love learning new things. I learn PHP and Java to implement my knowlege in my future projects. The items that you see here are paret of my daily routine and I love them. Thank you.</p>
+		</div>
+
+		<div class="list">
+			<ul>
+				<li aria-hidden="false">
+						<span class="logo" style="background-image: url('img/html.png')"></span>
+						<span class="hover"></span>
+						<span class="logo" style="background-image: url('img/html.png')"></span>
+				</li>
+
+				<li aria-hidden="true">
+						<span class="logo" style="background-image: url('img/css.png')"></span>
+						<span class="hover"></span>
+						<span class="logo" style="background-image: url('img/css.png')"></span>
+				</li>
+
+				<li aria-hidden="true">
+						<span class="logo" style="background-image: url('img/js.png')"></span>
+						<span class="hover"></span>
+						<span class="logo" style="background-image: url('img/js.png')"></span>
+				</li>
+
+				<li aria-hidden="true">
+						<span class="logo" style="background-image: url('img/jquery.png')"></span>
+						<span class="hover"></span>
+						<span class="logo" style="background-image: url('img/jquery.png')"></span>
+				</li>
+
+				<li aria-hidden="true">
+						<span class="logo" style="background-image: url('img/ps.png')"></span>
+						<span class="hover"></span>
+						<span class="logo" style="background-image: url('img/ps.png')"></span>
+				</li>
+
+				<li aria-hidden="true">
+						<span class="logo" style="background-image: url('img/ill.png')"></span>
+						<span class="hover"></span>
+						<span class="logo" style="background-image: url('img/ill.png')"></span>
+				</li>
+
+				<li aria-hidden="true">
+						<span class="logo" style="background-image: url('img/c4d.png')"></span>
+						<span class="hover"></span>
+						<span class="logo" style="background-image: url('img/c4d.png')"></span>
+				</li>
+
+				<li aria-hidden="true">
+						<span class="logo" style="background-image: url('img/max.png')"></span>
+						<span class="hover"></span>
+						<span class="logo" style="background-image: url('img/max.png')"></span>
+				</li>
+			</ul>
+		</div>
+		<!-- <div class="list"></div> -->
+	</section>
+
+	<section id="contacts">
+		<div class="map ">
+			<div style="background-color: rgb(229, 227, 223); overflow: hidden;" id="map"></div>
+		</div>
+
+		<div class="address">
+			<address>
+			Brooklyn, NY</address>
+			<a href="http://dmik3d.com">www.dmik3d.com</a><br>
+			<a href="mailto:dmik17@gmail.com">dmik17@gmail.com</a>
+		</div>
+
+		<div class="feedback ">
+			<p style="font-size:5.2rem; font-weight:100;">Contact me</p><br>
+			<form novalidate="novalidate" method="GET" action="serverSideScript.php">
+				<fieldset>
+					<div class="field">
+						<input name="name" id="name_field" placeholder="Name" type="text">
+					</div>
+					<div class="group">
+						<div class="field">
+							<input name="email" id="email_field" placeholder="E-mail" type="email">
+						</div>
+						<div class="field">
+							<input name="subject" id="subject_field" placeholder="subject" type="text">
+						</div>
+					</div>
+					
+					<div class="field">
+						<textarea name="message" id="message_field" cols="1" rows="1" placeholder="Text"></textarea>
+					</div>
+					<div class="group">
+						<button type="submit">Send</button>
+						<div class="error-msg"></div>
+					</div>
+				</fieldset>
+			</form>
+			<div class="success">
+				<h6>CONTACT ME <br> </h6>
+				<p >email me at dmik3d@gmail.com<br>email me at dmik17@gmail.com<br></p>
+				<div class="btn">
+					<a href="#about" class="close">HOME</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="nav">
+			<ul>
+				<li class=""><a href="#about">About</a></li>
+				<li class=""><a href="#steps">Workflow</a></li>
+				<li class=""><a href="#portfolio">Potfolio</a></li>
+				<li class=""><a href="#knowledge">Knowledge</a></li>
+				<li class=""><a href="#contacts">Contact me</a></li>
+			</ul>
+		</div>
+		<p class="site">&copy; 2016 dmik</p>
+	</footer>
+
+	<div class="nav-ctrl">
+		<div class="inner">
+			<ul>
+				<li class=""><a href="#about"></a></li>
+				<li class=""><a href="#steps"></a></li>
+				<li class=""><a href="#portfolio"></a></li>
+				<li class=""><a href="#knowledge"></a></li>
+				<li class=""><a href="#contacts"></a></li>
+			</ul>
+			<a href="#"></a>
+		</div>
 	</div>
 
-	<div class="section " >
-	
-            <div class="intro1">
 
-                <div class="webone"><img src="img/webdesign.png" alt="web_design"/><div class="bigtext">Web Design</div></div>
-                <div class="gdone"><img src="img/gd.png" alt="graphic_design"/> <div class="bigtext">Graphic Design</div></div>
-                <div class="threedone"><img src="img/3d.png"  alt="3d_design"/><div class="bigtext">3D Illustration</div></div>
 
-            </div>
-	</div>
 
-	<div class="section" >
-		<div class="gdheader"><div class="headwd"></div><div class="hometext"><img src="img/home.png"  alt="home"/></div></div>
 
-
-
-           <div class="slide" id="slide1">
-            <div class="intro1">
-                 <a href="web/index.html" target="_blank"><div class="wd1">
-                      <div id="wrapwd1"> <p>Open Web Portfolio in a new tab</p></div>
-                </div></a>
-      
-                     
-         
-           </div> 
-           </div>   
-
-            
-
-
-	</div>
-
-
-
-
-<!--           GRAPHIC DESIGN SECTION             -->
-
-<div class="section" style="height:100%;">
-
-    <div class="gdheader"><div class="headgd"><img src="img/gdtext.png"  alt="graph_design_text"/></div><div class="hometext"><img src="img/home.png"  alt="home"/></div></div>
-
-
-          <div class="slide" id="slide1">
-            <div class="intro1">
-                     <div class="gd1"><p>Castle Fight</p></div>
-                     <div class="gd2"><p>Booklet Design</p></div>
-                     <div class="gd3"><p>Digital Magazine</p></div>
-                     <div class="gd4"><p>Health Bar</p></div>
-                     <br>
-                     <div class="gd5"><p>Construtivism Cards</p></div>
-                     <div class="gd6"><p>Book Design</p></div>         
-            </div> 
-           </div>   
-
-
-
-          <div class="slide" id="castleFight">
-            <div class="intro1"><div class="artContainer">
-                      <h2>Castle Fight</h2><br>
-                      <p>The project includes several stages: </p>
-                            <ul>
-                              <li>game design, - creating game mechanichs, adjusting balance and rules</li>
-                              <li>package design, - the development of the style of all the elements</li>
-                              <li>book design, - making the layouts and writing for the rulebook</li>
-                              <li>game art, - creating art pieces for the game</li>
-                            </ul> 
-                     <center><a rel="gallery-1" href="img/gd/0af.jpg" class="swipebox" title="Package design 1"> <img src="img/gd/0att.jpg"  alt="pd1"/></a>
-                      <a rel="gallery-1" href="img/gd/0bf.jpg" class="swipebox" title="Package design 2"><img src="img/gd/0bt.jpg"  alt="pd2"/></a>
-                      <a rel="gallery-1" href="img/gd/0cf.jpg" class="swipebox" title="Package design 3"><img src="img/gd/0ct.jpg"  alt="pd3"/></a>
-                     <a rel="gallery-1" href="img/gd/0df.jpg" class="swipebox" title="Package design 4"> <img src="img/gd/0dt.jpg"  alt="pd4"/></a>
-                      <a rel="gallery-1" href="img/gd/0ef.jpg" class="swipebox" title="Booklet Design"><img src="img/gd/0et.jpg" alt="booklet"/><br></a>
-                      <a rel="gallery-1" href="img/gd/0ff.jpg" class="swipebox" title="Game Art - Warrior 1"><img src="img/gd/0ft.jpg"  alt="warrior 1"/></a>
-                      <a rel="gallery-1"  href="img/gd/0gf.jpg" class="swipebox" title="Game Art - Warrior 2"><img src="img/gd/0gt.jpg"  alt="warrior 2"/></a>
-                      <a rel="gallery-1" href="img/gd/0hf.jpg" class="swipebox" title="Game Art - Warrior 3"><img src="img/gd/0ht.jpg"  alt="warrior 3"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-
-
-
-          <div class="slide" id="booklet"> 
-            <div class="intro1"><div class="artContainer">
-                      <h2>Booklet Design</h2><br>
-                      <p>This booklet was part of a bigger project, "Brain Idioms in 3D" </p>
-                            <ul>
-                              <li>the book was printed with glossy soft cover</li>
-                              <li>the total number of pages is 28</li>
-                              <li>pages are luster uality paper</li>
-                            </ul> 
-                      <center><a rel="gallery-2"  href="img/gd/4af.jpg" class="swipebox" title="Cover page"><img src="img/gd/4att.jpg"  alt="cover"/></a>
-                     <a rel="gallery-2" href="img/gd/4bf.jpg" class="swipebox" title="Pages 4-5"> <img src="img/gd/4bt.jpg"  alt="pages1"/></a>
-                     <a rel="gallery-2" href="img/gd/4cf.jpg" class="swipebox" title="Pages 12-13"> <img src="img/gd/4ct.jpg"  alt="pages2"/></a>
-                     <a rel="gallery-2" href="img/gd/4df.jpg" class="swipebox" title="Pages 8-9"> <img src="img/gd/4dt.jpg"  alt="pages3"/></a>
-                    <a rel="gallery-2" href="img/gd/4ef.jpg" class="swipebox" title="Booklet in a gallery"> <img src="img/gd/4et.jpg"  alt="pages4"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-
-
-
-          <div class="slide" id="digitalMag">
-            <div class="intro1"><div class="artContainer">
-                      <h2>Digital Magazine</h2>
-                      <br>
-                      <p>This Digital magazine was created in Indesign and adapted for Apple iPad. <br>
-                        The layout was done for both portrait and landscape orientation.</p>
-                     <center><a rel="gallery-3" href="img/gd/1af.jpg" class="swipebox" title="Cover page"> <img src="img/gd/1at.jpg"  alt="cover"/></a>
-                     <a rel="gallery-3" href="img/gd/1bf.jpg" class="swipebox" title="Page 2"> <img src="img/gd/1bt.jpg"  alt="page2"/></a>
-                     <a rel="gallery-3" href="img/gd/1cf.jpg" class="swipebox" title="Page 4"> <img src="img/gd/1ct.jpg"  alt="page4"/></a>
-                      <a rel="gallery-3" href="img/gd/1df.jpg" class="swipebox" title="Page 5"><img src="img/gd/1dt.jpg" alt="page5"/></a>
-                      <a rel="gallery-3" href="img/gd/1ef.jpg" class="swipebox" title="Alternate covers"><img src="img/gd/1ett.jpg" alt="covers"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-
-
-
-
-          <div class="slide" id="gameBar"> 
-            <div class="intro1">4nd project in gd
-            </div>
-          </div>
-                
-
-
-
-          <div class="slide" id="rusCard">
-            <div class="intro1"><div class="artContainer">
-                      <h2>Card Design</h2>
-                      <p>This card design was inspired by Russian Constructivism.</p> 
-                     <center> <a rel="gallery-4" href="img/gd/3af.jpg" class="swipebox" title="Russian Constructivism Cards 1"><img src="img/gd/3at.jpg"  alt="cards1"/></a>
-                    <a rel="gallery-4" href="img/gd/3bf.jpg" class="swipebox" title="Russian Constructivism Cards 2">  <img src="img/gd/3bt.jpg"  alt="cards2"/></a>
-                     <a rel="gallery-4" href="img/gd/3cf.jpg" class="swipebox" title="Russian Constructivism Cards 3"> <img src="img/gd/3ctt.jpg"  alt="cards3"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-
-
-
-          <div class="slide" id="childBook"> 
-            <div class="intro1"><div class="artContainer">
-                      <h2>Children's Book</h2>
-                      <p>The book called "How to Become a Chammomile" contains colored pencil illustrations</p> 
-                     <center><a rel="gallery-5" href="img/gd/2gf.jpg" class="swipebox" title="Handmade hardcover book in different sizes"> <img src="img/gd/2gtt.jpg"  alt="cover"/></a>
-                     <a rel="gallery-5" href="img/gd/2hf.jpg" class="swipebox" title="a mini version of the book"> <img src="img/gd/2ht.jpg"  alt="minibook"/></a>
-                      <a rel="gallery-5" href="img/gd/2af.jpg" class="swipebox" title="Pages 2-3"><img src="img/gd/2at.jpg"  alt="pages 2-3"/></a>
-                      <a rel="gallery-5" href="img/gd/2bf.jpg" class="swipebox" title="Page 5"><img src="img/gd/2bt.jpg"  alt="page 5"/></a>
-                     <a rel="gallery-5" href="img/gd/2cf.jpg" class="swipebox" title="Page 9"> <img src="img/gd/2ct.jpg"  alt="page 9"/></a>
-                     <a rel="gallery-5" href="img/gd/2df.jpg" class="swipebox" title="Page 10"> <img src="img/gd/2dt.jpg"  alt="page 10"/></a>
-                     <a rel="gallery-5" href="img/gd/2ef.jpg" class="swipebox" title="Page 12"> <img src="img/gd/2et.jpg"  alt="page 12"/></a>
-                     <a rel="gallery-5" href="img/gd/2ff.jpg" class="swipebox" title="Page 15"> <img src="img/gd/2ft.jpg"  alt="page 15"/></a>
-                     <a rel="gallery-5" href="img/gd/2f.jpg" class="swipebox" title="Pages 16-17"> <img src="img/gd/2ftt.jpg"  alt="pages 16-17"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-
- </div>
-
-
-<!--           3D ILLUSTRATION SECTION             -->
-
-
-  <div class="section" >
-    <div class="gdheader"><div class="headthreed"><img src="img/3dtext.png"  alt="3d"/></div><div class="hometext"><img src="img/home.png"  alt="home"/></div></div>
-
-
-
-           <div class="slide" id="slide1">
-            <div class="intro1">
-                     <div class="threed1"><p>Brain Idioms</p></div>
-                     <div class="threed2"><p>Spaceship</p></div>
-                     <div class="threed3"><p>Stillife</p></div>
-                     <div class="threed4"><p>Classroom</p></div><br>
-                     <div class="threed5"><p>Video</p></div>
-                     <div class="threed6"><p>2d Illustrations</p></div>
-                     <div class="threed7"><p>Miscellanious</p></div>
-                     
-         
-           </div> 
-           </div>   
-
-          <div class="slide" id="brainidiom"><div class="intro1"><div class="artContainer">
-                      <h2>Brain Idioms in 3D</h2>
-                      <p>The poject explored the linguistic aspect of he phrases and how we percieve the language</p> 
-                      <center><a rel="gallery-6" href="img/illo/6if.jpg" class="swipebox" title="Gallery Installation"><img src="img/illo/6itt.jpg"  alt="gallery"/></a>
-                      <a rel="gallery-6" href="img/illo/6af.jpg" class="swipebox" title="Brainwashing"><img src="img/illo/6at.jpg" alt="brainwash"/></a>
-                      <a rel="gallery-6" href="img/illo/6bf.jpg" class="swipebox" title="Brainfreeeze"><img src="img/illo/6bt.jpg" alt="brain freeze"/></a>
-                      <a rel="gallery-6" href="img/illo/6cf.jpg" class="swipebox" title="Brainfried"><img src="img/illo/6ctt.jpg" alt="brain fried"/></a>
-                      <a rel="gallery-6" href="img/illo/6df.jpg" class="swipebox" title="Brainstorm"><img src="img/illo/6dt.jpg" alt="brainstorm"/></a>
-                      <a rel="gallery-6" href="img/illo/6ef.jpg" class="swipebox" title="Brainwave"><img src="img/illo/6et.jpg"  alt="brainwave"/></a>
-                      <a rel="gallery-6" href="img/illo/6ff.jpg" class="swipebox" title="Pick Someone's Brain"><img src="img/illo/6ft.jpg"  alt="pick brains"/></a>
-                      <a rel="gallery-6" href="img/illo/6gf.jpg" class="swipebox" title="Braindrain"><img src="img/illo/6gt.jpg" alt="braindrain"/></a>
-                      <a rel="gallery-6" href="img/illo/6hf.jpg" class="swipebox" title="No-brainer"><img src="img/illo/6ht.jpg" alt="no brainer"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-                
-
-                <div class="slide" id="spaceship"> <div class="intro1"><div class="artContainer">
-                      <h2>Spaceship</h2>
-                      <p>The spaceship that is designed for high speed with aerodynamic qualities</p> 
-                      <center><a rel="gallery-7"  href="img/illo/4f.jpg" class="swipebox" title="Spaceship 1"><img src="img/illo/4tt.jpg"  alt="spaseship1"/></a>
-                      <a rel="gallery-7" href="img/illo/4bf.jpg" class="swipebox" title="Spaceship 2"><img src="img/illo/4bt.jpg" alt="spaseship2"/></a>
-                      <a rel="gallery-7" href="img/illo/4af.jpg" class="swipebox" title="Spaceship 3"><img src="img/illo/4at.jpg" alt="spaseship3"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-               
-
-
-
-               <div class="slide" id="stillife"> 
-                <div class="intro1"><div class="artContainer">
-                      <h2>Stillife (after Phillip Gerard)</h2>
-                      <p>The poject explored was about a twist in a stillife composition</p> 
-                     <center> <a rel="gallery-8" href="img/illo/3f.jpg" class="swipebox" title="Stillife (after Phillip Gerard)"><img src="img/illo/3tt.jpg"  alt="stillife 1"/></a>
-                      <a rel="gallery-8" href="img/illo/3af.jpg" class="swipebox" title="Stillife twist 1"><img src="img/illo/3at.jpg" alt="stillife 2"/></a>
-                      <a rel="gallery-8" href="img/illo/3bf.jpg" class="swipebox" title="Stillife twist 2"><img src="img/illo/3bt.jpg"  alt="stillife3"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-
-
-
-          <div class="slide" id="classroom"> 
-             <div class="intro1"><div class="artContainer">
-                      <h2>Classroom </h2>
-                      <p>Inspired by Monster inc, I ecreated a room 121 from the Compton Goethals, the City College of New York</p> 
-                      <center><a rel="gallery-9" href="img/illo/2f.jpg" class="swipebox" title="Classroom 1"><img src="img/illo/2tt.jpg"  alt="classroom1"/></a>
-                      <a rel="gallery-9" href="img/illo/2bf.jpg" class="swipebox" title="Classroom 2"><img src="img/illo/2bt.jpg" alt="classroom2"/></a>
-                      <a rel="gallery-9" href="img/illo/2af.jpg" class="swipebox" title="Classroom 3"><img src="img/illo/2at.jpg" alt="classroom3"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-
-
-
-          <div class="slide" id="animvideos"> 
-            <div class="intro1"><div class="artContainer">
-                      <h2>Videos </h2>
-                      <p>Inspired by Monster inc, I ecreated a room 121 from the Compton Goethals, the City College of New York</p> <center>
-                     <center> <iframe width="560" height="315" src="https://www.youtube.com/embed/t89y7VrYhrc" frameborder="0" allowfullscreen></iframe><br><br>
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/ccZtR8bvvnU" frameborder="0" allowfullscreen></iframe><br><br>
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/EJT_mK0IyIo" frameborder="0" allowfullscreen></iframe><br><br>
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/RAZT_Rc-NSM" frameborder="0" allowfullscreen></iframe><br><br>
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/gd2WyWeIr4o" frameborder="0" allowfullscreen></iframe></center>
-                    </center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-
-
-
-         <div class="slide" id="illospencil"> 
-          <div class="intro1"><div class="artContainer">
-                      <h2>Illustrations in 2D</h2>
-                      <p>The pojects explored wIllustrations in 2d</p> 
-                     <center><a rel="gallery-10" href="img/illo/5af.jpg" class="swipebox" title="What Home Means"> <img src="img/illo/5at.jpg"  alt="what home means"/></a>
-                     <a rel="gallery-10" href="img/illo/5df.jpg" class="swipebox" title="BeeMan"> <img src="img/illo/5dt.jpg"  alt="BeeMan"/></a>
-                      <a rel="gallery-10" href="img/illo/5cf.jpg" class="swipebox" title="Beeman postwar"><img src="img/illo/5ct.jpg"  alt="BeeMan postwar"/></a>
-                      <a rel="gallery-10" href="img/illo/5ef.jpg" class="swipebox" title="Passion Planet"><img src="img/illo/5et.jpg"  alt="Passion Planet"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-        
-
-
-         <div class="slide" id="miscetudes"> 
-          <div class="intro1"><div class="artContainer">
-                      <h2>Miscellaneous works in 3D</h2>
-                      <p>The project was about a twist in a stillife composition</p> 
-                     <center> <a rel="gallery-11" href="img/illo/1f.jpg" class="swipebox" title="Eyeater"><img src="img/illo/1tt.jpg"  alt="EyEater"/></a>
-                     <a rel="gallery-11" href="img/illo/7af.jpg" class="swipebox" title="Washing Machine"><img src="img/illo/7at.jpg"  alt="washing machine"/></a>
-                      <a rel="gallery-11" href="img/illo/7bf.jpg" class="swipebox" title="Grassball"><img src="img/illo/7bt.jpg" alt="grass ball"/></a>
-                      <a rel="gallery-11" href="img/illo/7cf.jpg" class="swipebox" title="Tornado"><img src="img/illo/7ct.jpg" alt="tornado"/></a>
-                      <a rel="gallery-11" href="img/illo/1cf2.jpg" class="swipebox" title="Do not wash your brains"><img src="img/illo/1cf2t.jpg" alt="dont wash your brains"/></a>
-                      <a rel="gallery-11" href="img/illo/7ef.jpg" class="swipebox" title="Obvious choice"><img src="img/illo/7et.jpg" alt="choice"/></a>
-                      <a rel="gallery-11" href="img/illo/7ff.jpg" class="swipebox" title="Etude with cake and broccoli"><img src="img/illo/7ft.jpg" alt="etude"/></a>
-                      <a rel="gallery-11" href="img/illo/5f.jpg" class="swipebox" title="Jefferson Memorial"><img src="img/illo/5ft.jpg"  alt="Jefferson Memorial"/></a></center>
-                      <br><br>
-                      <h2>Thank you!</h2>
-                      <br><br><br>
-            </div></div>
-          </div>
-      
-  </div>
-
-
-  
-
-</div>
-
-
-
-
-
-
-
-<script>
-
-$('.hometext').click(function () {
-    $.fn.fullpage.moveTo('mainMenu', 0)
-});
-
-$('.arrow2').click(function () {
-    $.fn.fullpage.moveTo('mainMenu', 0)
-});
-
-
-$('.arrow').click(function () {
-    $.fn.fullpage.moveSectionDown()
-});
-
-$('.webone').click(function () {
-    $.fn.fullpage.moveTo('webDesign', 0)
-});
-
-$('.gdone').click(function () {
-    $.fn.fullpage.moveTo('graphicDesign', 0)
-});
-
-$('.threedone').click(function () {
-    $.fn.fullpage.moveTo('illustration', 0)
-});
-
-$('.headgd').click(function () {
-    $.fn.fullpage.moveTo('graphicDesign', 0)
-});
-
-$('.headwd').click(function () {
-    $.fn.fullpage.moveTo('webDesign', 0)
-});
-
-$('.headthreed').click(function () {
-    $.fn.fullpage.moveTo('illustration', 0)
-});
-
-$('.gd1').click(function () {
-    $.fn.fullpage.moveTo('graphicDesign', 1)
-});
-
-$('.gd2').click(function () {
-    $.fn.fullpage.moveTo('graphicDesign', 2)
-});
-
-$('.gd3').click(function () {
-    $.fn.fullpage.moveTo('graphicDesign', 3)
-});
-
-/*$('.gd4').click(function () {
-    $.fn.fullpage.moveTo('graphicDesign', 4)
-});*/
-
-$('.gd5').click(function () {
-    $.fn.fullpage.moveTo('graphicDesign', 5)
-});
-
-$('.gd6').click(function () {
-    $.fn.fullpage.moveTo('graphicDesign', 6)
-});
-
-$('.gd7').click(function () {
-    $.fn.fullpage.moveTo('graphicDesign', 7)
-});
-
-$('.gd8').click(function () {
-    $.fn.fullpage.moveTo('graphicDesign', 8)
-});
-
-$('.wd1').click(function () {
-    $.fn.fullpage.moveTo('webDesign', 1)
-});
-
-$('.threed1').click(function () {
-    $.fn.fullpage.moveTo('illustration', 1)
-});
-
-$('.threed2').click(function () {
-    $.fn.fullpage.moveTo('illustration', 2)
-});
-
-$('.threed3').click(function () {
-    $.fn.fullpage.moveTo('illustration', 3)
-});
-
-$('.threed4').click(function () {
-    $.fn.fullpage.moveTo('illustration', 4)
-});
-
-$('.threed5').click(function () {
-    $.fn.fullpage.moveTo('illustration', 5)
-});
-
-$('.threed6').click(function () {
-    $.fn.fullpage.moveTo('illustration', 6)
-});
-
-$('.threed7').click(function () {
-    $.fn.fullpage.moveTo('illustration', 7)
-});
-
-$('.threed8').click(function () {
-    $.fn.fullpage.moveTo('illustration', 8)
-});
-	</script>
-
-<script type="text/javascript">
-$('.swipebox').swipebox(); ;
-</script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery_005.js"></script>
+<script src="js/jquery_004.js"></script>
+<script src="js/jquery_006.js"></script>
+<script src="js/jquery_003.js"></script>
+<script src="js/jquery_007.js"></script>
+<script src="js/jquery_002.js"></script>
+<script src="js/js"></script>
+<script src="js/script.js"></script>
+<script src="js/map.js"></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -787,5 +420,4 @@ $('.swipebox').swipebox(); ;
 
 </script>
 
-</body>
-</html>
+</body></html>
